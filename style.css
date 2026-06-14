@@ -3,12 +3,12 @@
 
     :root {
       --bg: #0f0162ac;
-      --surface: #F8F7FF;
+      --surface: #0f0162ac;
       --accent: #6C47FF;
-      --accent-light: #EDE9FF;
+      --accent-light: #0f0162ac;
       --text-primary: #0F0B1E;
-      --text-secondary: #ffffff;
-      --border: #E8E5F0;
+      --text-secondary: #0f0162ac;
+      --border: #0f0162ac;
       --font-head: 'Plus Jakarta Sans', sans-serif;
       --font-body: 'Inter', sans-serif;
     }
