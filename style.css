@@ -1,0 +1,373 @@
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FFFFFF;
+      --surface: #F8F7FF;
+      --accent: #6C47FF;
+      --accent-light: #EDE9FF;
+      --text-primary: #0F0B1E;
+      --text-secondary: #6B6880;
+      --border: #E8E5F0;
+      --font-head: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── Shared Section Styles ── */
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+      width: fit-content;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: opacity 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      text-decoration: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1.5px solid var(--border);
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── About ── */
+    #about { border-top: 1px solid var(--border); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 2.5rem;
+    }
+
+    .about-avatar {
+      width: 100%;
+      aspect-ratio: 1;
+      background: var(--accent-light);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--accent);
+      max-width: 240px;
+    }
+
+    /* REPLACE the .about-avatar with a real photo later:
+       <img src="your-photo.jpg" alt="Your Name" class="about-avatar" style="object-fit:cover;"> */
+
+    .about-text p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    /* ── Skills ── */
+    #skills-section {
+      background: var(--surface);
+    }
+
+    .skills-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .skill-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .skill-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-card h3 {
+      font-family: var(--font-head);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .skill-card p {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+
+    /* ── Projects ── */
+    #projects { border-top: 1px solid var(--border); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(108,71,255,0.1);
+    }
+
+    .project-thumb {
+      background: var(--accent-light);
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+    }
+
+    /* REPLACE .project-thumb with a real screenshot later:
+       <img src="project1.png" alt="Project name" style="width:100%; height:180px; object-fit:cover;"> */
+
+    .project-info { padding: 1.25rem; }
+
+    .project-tag {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    .project-info h3 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-info p {
+      font-size: 0.87rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .project-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .project-link:hover { opacity: 0.7; }
+
+    /* ── Contact ── */
+    #contact {
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    #contact p {
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 1rem auto 2.5rem;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 640px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .about-avatar {
+        max-width: 100px;
+        font-size: 2.2rem;
+        border-radius: 12px;
+      }
+
+      nav { padding: 1rem; }
+
+      .nav-links {
+        gap: 1.25rem;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+    }
