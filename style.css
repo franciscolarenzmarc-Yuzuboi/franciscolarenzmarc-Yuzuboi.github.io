@@ -2,13 +2,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #008cffac;
-      --surface: #ffffffac;
+      --bg: #ffffff;
+      --surface: #6C47FF;
       --accent: #6C47FF;
-      --accent-light: #0f0162ac;
+      --accent-light: #EDE9FF;
       --text-primary: #0F0B1E;
-      --text-secondary: #ffffffff;
-      --border: #2600ffac;
+      --text-secondary: #6B6880;
+      --border: #E8E5F0;
       --font-head: 'Plus Jakarta Sans', sans-serif;
       --font-body: 'Inter', sans-serif;
     }
